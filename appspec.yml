@@ -1,5 +1,5 @@
 version: 0.0
-os: ubuntu
+os: linux
 
 files:
   - source: /
@@ -9,7 +9,9 @@ hooks:
   ApplicationStop:
     - location: scripts/stop_container.sh
       timeout: 300
+      runas: root
 
   ApplicationStart:
     - location: scripts/start_container.sh
       timeout: 300
+      runas: root
